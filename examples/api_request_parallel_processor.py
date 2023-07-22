@@ -141,13 +141,13 @@ async def process_api_requests_from_file(
 
     # initialize flags
     file_not_finished = True  # after file is empty, we'll skip reading it
-    logging.debug(f"Initialization complete.")
+    logging.debug("Initialization complete.")
 
     # initialize file reading
     with open(requests_filepath) as file:
         # `requests` will provide requests one at a time
         requests = file.__iter__()
-        logging.debug(f"File opened. Entering main loop")
+        logging.debug("File opened. Entering main loop")
 
         while True:
             # get next request (if one is not already waiting for capacity)
@@ -227,7 +227,7 @@ async def process_api_requests_from_file(
                 logging.warn(f"Pausing to cool down until {time.ctime(status_tracker.time_of_last_rate_limit_error + seconds_to_pause_after_rate_limit_error)}")
 
         # after finishing, log final status
-        logging.info(f"""Parallel processing complete. Results saved to {save_filepath}""")
+        logging.info(f"Parallel processing complete. Results saved to {save_filepath}")
         if status_tracker.num_tasks_failed > 0:
             logging.warning(f"{status_tracker.num_tasks_failed} / {status_tracker.num_tasks_started} requests failed. Errors logged to {save_filepath}.")
         if status_tracker.num_rate_limit_errors > 0:
@@ -325,7 +325,7 @@ class APIRequest:
 
 def api_endpoint_from_url(request_url):
     """Extract the API endpoint from the request URL."""
-    match = re.search('^https://[^/]+/v\\d+/(.+)$', request_url)
+    match = re.search(r"^https://[^/]+/v\d+/(.+)$", request_url)
     return match[1]
 
 
@@ -433,7 +433,7 @@ if __name__ == "__main__":
     )
 
 
-"""
+r"""
 APPENDIX
 
 The example requests file at openai-cookbook/examples/data/example_requests_to_parallel_process.jsonl contains 10,000 requests to text-embedding-ada-002.
