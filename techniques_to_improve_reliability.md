@@ -33,10 +33,10 @@ A: Let's think step by step.
 ```
 
 ```text-davinci-002
-There are 16 balls in total. 
-Half of the balls are golf balls. 
-That means that there are 8 golf balls. 
-Half of the golf balls are blue. 
+There are 16 balls in total.
+Half of the balls are golf balls.
+That means that there are 8 golf balls.
+Half of the golf balls are blue.
 That means that there are 4 blue golf balls.
 ```
 
@@ -65,73 +65,73 @@ The rest of this article shares techniques for improving reliability of large la
 One way to give a model more time and space to think is to break tasks into simpler pieces.
 
 As an example, consider a task where we ask the model a multiple-choice question about some text - in this case, a game of Clue. When asked directly, `text-davinci-002` isn't able to put clues 3 & 5 together, and answers incorrectly:
- 
+
 ```text-davinci-002
 Use the following clues to answer the following multiple-choice question.
- 
+
 Clues:
 1. Miss Scarlett was the only person in the lounge.
 2. The person with the pipe was in the kitchen.
 3. Colonel Mustard was the only person in the observatory.
 4. Professor Plum was not in the library nor the billiard room.
 5. The person with the candlestick was in the observatory.
- 
+
 Question: Was Colonel Mustard in the observatory with the candlestick?
 (a) Yes; Colonel Mustard was in the observatory with the candlestick
 (b) No; Colonel Mustard was not in the observatory with the candlestick
 (c) Unknown; there is not enough information to determine whether Colonel Mustard was in the observatory with the candlestick
- 
+
 Solution:
 ```
- 
+
 ```text-davinci-002
 (c) Unknown; there is not enough information to determine whether Colonel Mustard was in the observatory with the candlestick
 ```
- 
+
 Although clues 3 and 5 establish that Colonel Mustard was the only person in the observatory and that the person in the observatory had the candlestick, the model fails to combine them into a correct answer of (a) Yes.
- 
+
 However, instead of asking for the answer directly, we can split the task into three pieces:
- 
+
 - First, go through the clues one by one and consider whether the clue is potentially relevant
 - Second, combine the relevant clues to reason out the answer to the question
 - Third, write the final answer: either (a), (b), or (c)
- 
+
 ```text-davinci-002
 Use the following clues to answer the following multiple-choice question, using the following procedure:
 (1) First, go through the clues one by one and consider whether the clue is potentially relevant
 (2) Second, combine the relevant clues to reason out the answer to the question
 (3) Third, map the answer to one of the multiple choice answers: either (a), (b), or (c)
- 
+
 Clues:
 1. Miss Scarlett was the only person in the lounge.
 2. The person with the pipe was in the kitchen.
 3. Colonel Mustard was the only person in the observatory.
 4. Professor Plum was not in the library nor the billiard room.
 5. The person with the candlestick was in the observatory.
- 
+
 Question: Was Colonel Mustard in the observatory with the candlestick?
 (a) Yes; Colonel Mustard was in the observatory with the candlestick
 (b) No; Colonel Mustard was not in the observatory with the candlestick
 (c) Unknown; there is not enough information to determine whether Colonel Mustard was in the observatory with the candlestick
- 
+
 Solution:
 (1) First, go through the clues one by one and consider whether the clue is potentially relevant:
 ```
- 
+
 ```text-davinci-002
 Clue 1: Miss Scarlett was the only person in the lounge. This clue is not relevant.
 Clue 2: The person with the pipe was in the kitchen. This clue is not relevant.
 Clue 3: Colonel Mustard was the only person in the observatory. This clue is relevant.
 Clue 4: Professor Plum was not in the library nor the billiard room. This clue is not relevant.
 Clue 5: The person with the candlestick was in the observatory. This clue is relevant.
- 
+
 (2) Second, combine the relevant clues to reason out the answer to the question:
 Clue 3 and Clue 5 both say that the person with the candlestick was in the observatory. Colonel Mustard was the only person in the observatory, so Colonel Mustard was the person with the candlestick.
- 
+
 (3) Third, write the final answer:
 (a) Yes; Colonel Mustard was in the observatory with the candlestick
 ```
- 
+
 By giving the model more time and space to think, and guiding it along a reasoning plan, it's able to figure out the correct answer of (a) Yes.
 
 Another benefit of splitting complex instructions into smaller subtasks is that it can help keep the model focused on each subtask.
@@ -371,12 +371,12 @@ In addition to these two extensions, the authors also use a trick to reduce hall
 
 The authors evaluated their technique on two benchmarks: the ProofWriter task (not shown) and [EntailmentBankQA](https://allenai.org/data/entailmentbank) (shown). The technique increased accuracy substantially, especially on harder reasoning problems.
 
-![Faithful reasoning](images/faithful-reasoning_tab2.png)
+[![Faithful reasoning](images/faithful-reasoning_tab2.png)
 <br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell et al. (2022)](https://arxiv.org/abs/2208.14271)
 
 In addition, their sentence label manipulation trick essentially eliminated hallucination!
 
-![Faithful reasoning](images/faithful-reasoning_tab5.png)
+[![Faithful reasoning](images/faithful-reasoning_tab5.png)
 <br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell et al. (2022)](https://arxiv.org/abs/2208.14271)
 
 #### Implications
