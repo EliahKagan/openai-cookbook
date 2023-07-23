@@ -123,7 +123,6 @@ Large language models aren't only great at text - they can be great at code too.
 Codex powers [more than 70 products][Codex Apps Blog Post], including:
 
 * [GitHub Copilot] (autocompletes code in VS Code and other IDEs)
-* [Pygma](https://pygma.app/) (turns Figma designs into code)
 * [Replit](https://replit.com/) (has an 'Explain code' button and other features)
 * [Warp](https://www.warp.dev/) (a smart terminal with AI command search)
 * [Machinet](https://machinet.net/) (writes Java unit test templates)
