@@ -352,32 +352,32 @@ The halter models brings a couple of advantages:
 - if the process never halts, you'll get no answer, which is often preferable to a hallucinated guess
 
 [![Faithful reasoning](images/faithful-reasoning_fig3.png)
-<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell et al. (2022)](https://arxiv.org/abs/2208.14271)
+<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell and Murray Shanahan (2022)](https://arxiv.org/abs/2208.14271)
 
 [![Faithful reasoning](images/faithful-reasoning_fig5.png)
-<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell et al. (2022)](https://arxiv.org/abs/2208.14271)
+<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell and Murray Shanahan (2022)](https://arxiv.org/abs/2208.14271)
 
 Second, the authors add a value function, which is used to assess the quality of reasoning steps and search over multiple reasoning trajectories. This echoes a common theme for increasing reliability; instead of generating a single answer from the model, generate a set of answers and then use some type of value function / discriminator / verifier model to pick the best one.
 
 [![Faithful reasoning](images/faithful-reasoning_fig7.png)
-<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell et al. (2022)](https://arxiv.org/abs/2208.14271)
+<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell and Murray Shanahan (2022)](https://arxiv.org/abs/2208.14271)
 
 In addition to these two extensions, the authors also use a trick to reduce hallucination of fake facts. Rather than asking the model to write out factual sentences, they fine-tune a model to work with sentence labels (e.g., sen1) instead. This helps prevent the model from hallucinating fake facts not mentioned in the prompt context.
 
 [![Faithful reasoning](images/faithful-reasoning_fig4.png)
-<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell et al. (2022)](https://arxiv.org/abs/2208.14271)
+<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell and Murray Shanahan (2022)](https://arxiv.org/abs/2208.14271)
 
 #### Results
 
 The authors evaluated their technique on two benchmarks: the ProofWriter task (not shown) and [EntailmentBankQA](https://allenai.org/data/entailmentbank) (shown). The technique increased accuracy substantially, especially on harder reasoning problems.
 
 [![Faithful reasoning](images/faithful-reasoning_tab2.png)
-<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell et al. (2022)](https://arxiv.org/abs/2208.14271)
+<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell and Murray Shanahan (2022)](https://arxiv.org/abs/2208.14271)
 
 In addition, their sentence label manipulation trick essentially eliminated hallucination!
 
 [![Faithful reasoning](images/faithful-reasoning_tab5.png)
-<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell et al. (2022)](https://arxiv.org/abs/2208.14271)
+<br>Source: *Faithful Reasoning Using Large Language Models* by Antonia Creswell and Murray Shanahan (2022)](https://arxiv.org/abs/2208.14271)
 
 #### Implications
 
