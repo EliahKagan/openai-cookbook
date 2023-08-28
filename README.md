@@ -85,7 +85,7 @@ People are writing great tools and papers for improving outputs from GPT. Here a
 - [Outlines](https://github.com/normal-computing/outlines): A Python library that provides a domain-specific language to simplify prompting and constrain generation.
 - [Promptify](https://github.com/promptslab/Promptify): A small Python library for using language models to perform NLP tasks.
 - [Scale Spellbook](https://scale.com/spellbook): A paid product for building, comparing, and shipping language model apps.
-- [PromptPerfect](https://promptperfect.jina.ai/prompts): A paid product for testing and improving prompts.
+- [PromptPerfect](https://promptperfect.jina.ai/): A paid product for testing and improving prompts.
 - [Weights & Biases](https://wandb.ai/site/solutions/llmops): A paid product for tracking model training and prompt engineering experiments.
 - [OpenAI Evals](https://github.com/openai/evals): An open-source library for evaluating task performance of language models and prompts.
 - [LlamaIndex](https://github.com/jerryjliu/llama_index): A Python library for augmenting LLM apps with data.
