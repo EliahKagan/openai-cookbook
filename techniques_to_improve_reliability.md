@@ -389,7 +389,7 @@ This paper illustrates a number of helpful lessons for improving the reliability
 - Reduce hallucination by constraining what the model can say (e.g., by using sentence labels instead of sentences)
 - Maximize performance of models by fine-tuning them on specialized tasks
 
-To learn more, read the [full paper](https://arxiv.org/abs/2205.09712).
+To learn more, read the [full paper](https://arxiv.org/abs/2208.14271).
 
 ### Least-to-most prompting
 
