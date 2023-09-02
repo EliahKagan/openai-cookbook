@@ -11,7 +11,7 @@ The [`elasticsearch-labs`](https://github.com/elastic/elasticsearch-labs) repo c
 
 Check out our notebooks in this repo for working with OpenAI, using Elasticsearch as your vector database.
 
-### [Semantic search](https://github.com/openai/openai-cookbook/blob/main/examples/vector_databases/elasticsearch/elasticsearch-semantic-search.ipynb)
+### [Semantic search](elasticsearch-semantic-search.ipynb)
 
 In this notebook you'll learn how to:
 
@@ -19,13 +19,11 @@ In this notebook you'll learn how to:
  - Encode a question with the `openai ada-02` model
  - Perform a semantic search
 
-<hr>
+---
 
-
-### [Retrieval augmented generation](https://github.com/openai/openai-cookbook/blob/main/examples/vector_databases/elasticsearch/elasticsearch-retrieval-augmented-generation.ipynb)
+### [Retrieval augmented generation](elasticsearch-retrieval-augmented-generation.ipynb)
 
 This notebooks builds on the semantic search notebook by:
 
 - Selecting the top hit from a semantic search
 - Sending that result to the OpenAI [Chat Completions](https://platform.openai.com/docs/guides/gpt/chat-completions-api) API endpoint for retrieval augmented generation (RAG)
-
