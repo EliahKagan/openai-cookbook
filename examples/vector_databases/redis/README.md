@@ -5,21 +5,21 @@
 
 Most developers from a web services background are probably familiar with Redis. At it's core, Redis is an open-source key-value store that can be used as a cache, message broker, and database. Developers choice Redis because it is fast, has a large ecosystem of client libraries, and has been deployed by major enterprises for years.
 
-In addition to the traditional uses of Redis. Redis also provides [Redis Modules](https://redis.io/modules) which are a way to extend Redis with new capabilities, commands and data types. Example modules include [RedisJSON](https://redis.io/docs/stack/json/), [RedisTimeSeries](https://redis.io/docs/stack/timeseries/), [RedisBloom](https://redis.io/docs/stack/bloom/) and [RediSearch](https://redis.io/docs/stack/search/).
+In addition to the traditional uses of Redis. Redis also provides [Redis Modules](https://redis.io/resources/modules/) which are a way to extend Redis with new capabilities, commands and data types. Example modules include [RedisJSON](https://redis.io/docs/data-types/json/), [RedisTimeSeries](https://redis.io/docs/data-types/timeseries/), [RedisBloom](https://redis.io/docs/data-types/probabilistic/bloom-filter/) and [RediSearch](https://redis.io/docs/interact/search-and-query/).
 
 
 ### Deployment options
 
 There are a number of ways to deploy Redis. For local development, the quickest method is to use the [Redis Stack docker container](https://hub.docker.com/r/redis/redis-stack) which we will use here. Redis Stack contains a number of Redis modules that can be used together to create a fast, multi-model data store and query engine.
 
-For production use cases, The easiest way to get started is to use the [Redis Cloud](https://redislabs.com/redis-enterprise-cloud/overview/) service. Redis Cloud is a fully managed Redis service. You can also deploy Redis on your own infrastructure using [Redis Enterprise](https://redislabs.com/redis-enterprise/overview/). Redis Enterprise is a fully managed Redis service that can be deployed in kubernetes, on-premises or in the cloud.
+For production use cases, The easiest way to get started is to use the [Redis Cloud](https://redis.com/redis-enterprise-cloud/overview/) service. Redis Cloud is a fully managed Redis service. You can also deploy Redis on your own infrastructure using [Redis Enterprise](https://redis.com/redis-enterprise/advantages/). Redis Enterprise is a fully managed Redis service that can be deployed in kubernetes, on-premises or in the cloud.
 
 Additionally, every major cloud provider ([AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-e6y7ork67pjwg?sr=0-2&ref_=beagle&applicationId=AWSMPContessa), [Google Marketplace](https://console.cloud.google.com/marketplace/details/redislabs-public/redis-enterprise?pli=1), or [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/garantiadata.redis_enterprise_1sp_public_preview?tab=Overview)) offers Redis Enterprise in a marketplace offering.
 
 
 ### What is RediSearch?
 
-RediSearch is a [Redis module](https://redis.io/modules) that provides querying, secondary indexing, full-text search and vector search for Redis. To use RediSearch, you first declare indexes on your Redis data. You can then use the RediSearch clients to query that data. For more information on the feature set of RediSearch, see the [RediSearch documentation](https://redis.io/docs/stack/search/).
+RediSearch is a [Redis module](https://redis.io/resources/modules/) that provides querying, secondary indexing, full-text search and vector search for Redis. To use RediSearch, you first declare indexes on your Redis data. You can then use the RediSearch clients to query that data. For more information on the feature set of RediSearch, see the [RediSearch documentation](https://redis.io/docs/interact/search-and-query/).
 
 
 ### Features
@@ -33,12 +33,12 @@ RediSearch uses compressed, inverted indexes for fast indexing with a low memory
 * Field weighting
 * Complex boolean queries with AND, OR, and NOT operators
 * Prefix matching, fuzzy matching, and exact-phrase queries
-* Support for [double-metaphone phonetic matching](https://redis.io/docs/stack/search/reference/phonetic_matching/)
+* Support for [double-metaphone phonetic matching](https://redis.io/docs/interact/search-and-query/advanced-concepts/phonetic_matching/)
 * Auto-complete suggestions (with fuzzy prefix suggestions)
-* Stemming-based query expansion in [many languages](https://redis.io/docs/stack/search/reference/stemming/) (using [Snowball](http://snowballstem.org/))
+* Stemming-based query expansion in [many languages](https://redis.io/docs/interact/search-and-query/advanced-concepts/stemming/) (using [Snowball](http://snowballstem.org/))
 * Support for Chinese-language tokenization and querying (using [Friso](https://github.com/lionsoul2014/friso))
 * Numeric filters and ranges
-* Geospatial searches using [Redis geospatial indexing](/commands/georadius)
+* Geospatial searches using [Redis geospatial indexing](https://redis.io/commands/georadius/)
 * A powerful aggregations engine
 * Supports for all utf-8 encoded text
 * Retrieve full documents, selected fields, or only the document IDs
@@ -61,11 +61,11 @@ Given the large ecosystem around Redis, there are most likely client libraries i
 
 [redis-py-url]: https://github.com/redis/redis-py
 [redis-py-stars]: https://img.shields.io/github/stars/redis/redis-py.svg?style=social&amp;label=Star&amp;maxAge=2592000
-[redis-py-package]: https://pypi.python.org/pypi/redis
+[redis-py-package]: https://pypi.org/project/redis/
 
 [jedis-url]: https://github.com/redis/jedis
 [jedis-stars]: https://img.shields.io/github/stars/redis/jedis.svg?style=social&amp;label=Star&amp;maxAge=2592000
-[Jedis-package]: https://search.maven.org/artifact/redis.clients/jedis
+[Jedis-package]: https://central.sonatype.com/artifact/redis.clients/jedis
 
 [nredisstack-url]: https://github.com/redis/nredisstack
 [nredisstack-stars]: https://img.shields.io/github/stars/redis/nredisstack.svg?style=social&amp;label=Star&amp;maxAge=2592000
@@ -119,7 +119,7 @@ See [RediSearch on Redis Enterprise](https://redis.com/modules/redisearch/) for 
 
 For more information on how to use Redis as a vector database, check out the following resources:
 
-- [Redis Vector Similarity Docs](https://redis.io/docs/stack/search/reference/vectors/) - Redis official docs for Vector Search.
+- [Redis Vector Similarity Docs](https://redis.io/docs/interact/search-and-query/search/vectors/) - Redis official docs for Vector Search.
 - [Redis-py Search Docs](https://redis.readthedocs.io/en/latest/redismodules.html#redisearch-commands) - Redis-py client library docs for RediSearch.
 - [Vector Similarity Search: From Basics to Production](https://mlops.community/vector-similarity-search-from-basics-to-production/) - Introductory blog post to VSS and Redis as a VectorDB.
 - [AI-Powered Document Search](https://datasciencedojo.com/blog/ai-powered-document-search/) - Blog post covering AI Powered Document Search Use Cases & Architectures.
